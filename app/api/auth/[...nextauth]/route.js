@@ -9,7 +9,8 @@ const handler = NextAuth({
       clientId: process.env.LINKEDIN_CLIENT_ID,
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
       authorization: {
-        params: { scope: "openid profile email" },
+        url: "https://www.linkedin.com/oauth/v2/authorization",
+        scope: "openid profile email w_member_social"
       },
       token: {
         url: "https://www.linkedin.com/oauth/v2/accessToken",
